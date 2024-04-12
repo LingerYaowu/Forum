@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 设置背景颜色 */
+body {
+    background-color: rgb(20,20,20);
+}
+
+/* 最外层的盒子 */
+.big {
+    padding-top: 65px;
+    box-sizing: border-box;
+}
+
+/* 轮播图 */
+.rotation {
+    width: 75%;
+    height: 450px;
+    margin: 30px auto;
+    display: flex;
+}
+
+.rotation > div {
+    flex-shrink: 0;
+}
+
+
+/* 轮播图两侧盒子 */
+.rotation > div:not(.rota) {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 轮播图按钮 */
+.rotation > div:not(.rota) a {
+    color: rgb(150, 150, 150);
+    text-decoration: none;
+}
+
+.rotation > div:not(.rota) a span {
+    font-size: 70px;
+    cursor: pointer;
+}
+
+.rotation > div:not(.rota) span:hover {
+    color: rgb(170, 170, 170);
+}
+
+
+/* 轮播图的盒子 */
+.rotation > div.rota {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform:  rotateY(-2deg);
+}
+
+
+/* 轮播图内容盒子 */
+.rotation > div.rota > div.rotacenter {
+    width: 250px;
+    height: 350px;
+    border-radius: 3px;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: all .8s linear;
+}
+
+/* 轮播图项目 */
+.rotation > div.rota > div.rotacenter > div {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    background-color: rgba(22, 22, 22, 0.9);
+    box-shadow: 0 0 3px rgb(179, 179, 179);
+}
+
+/* 项目中的图片(海报) */
+.rotation > div.rota > div.rotacenter > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+/*第一个的项目*/
+div.rotacenter > div.rotademo01 {
+    transform: translateZ(320px);
+}
+
+/*第二个项目*/
+div.rotacenter > div.rotademo02 {
+    transform: rotateY(60deg) translateZ(320px);
+}
+
+/*第三个项目*/
+div.rotacenter > div.rotademo03 {
+    transform: rotateY(120deg) translateZ(320px);
+}
+
+/*第四个项目*/
+div.rotacenter > div.rotademo04 {
+    transform: translateZ(-320px) rotateY(180deg);
+}
+
+/*第五个项目*/
+div.rotacenter > div.rotademo05 {
+    transform: rotateY(-120deg) translateZ(320px);
+}
+
+
+/*第六个项目*/
+div.rotacenter > div.rotademo06 {
+    transform: rotateY(-60deg) translateZ(320px);
+}

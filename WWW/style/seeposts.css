@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 背景 */
+body {
+    background-color: rgb(20, 20, 20);
+    padding-top: 68px;
+    box-sizing: border-box;
+}
+
+/* 设置最外层的盒子 */
+.big {
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* 设置楼主的字体样式 */
+.landlord {
+    width: 100%;
+    background-color: rgba(50, 50, 50, .4);
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+/* 楼主头像 */
+.landlord > .landlordImg {
+    width: 20%;
+    height: 300px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.landlord > .landlordImg div {
+    width: 150px;
+    height: 150px;
+    border: solid 1px rgb(173, 173, 173);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.landlord > .landlordImg > div img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* 楼主头像 */
+.landlord > .postcontent {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 8px;
+    border-left:solid 1px rgba(210, 210, 210, .6);
+    box-sizing: border-box;
+}
+
+.landlord > .postcontent > p.poststitle {
+    height: 25%;
+    font: bolder 35px two;
+    color: rgb(201, 201, 201);
+}
+
+.landlord > .postcontent > p.postscontent {
+    height: 70%;
+    overflow: auto;
+    text-indent: 2em;
+    font-size: 17px;
+    color: rgb(180, 180, 180);
+    word-break: break-word;
+}
+
+.landlord > .postcontent > div {
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.landlord > .postcontent > div > div a,.landlord > .postcontent > div > div {
+    text-decoration: none;
+    color: rgb(210, 210, 210);
+}
+
+.landlord > .postcontent > div > div a:hover {
+    text-decoration: underline;
+}
+
+.landlord > .postcontent > div > div > a > span.landvip {
+    color: rgb(232,208,67);
+}
+
+.landlord > .postcontent > div > div:nth-of-type(2) > a > span {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px!important;
+    margin: 0 5px;
+}
+
+.landlord > .postcontent > div > div:nth-of-type(2) > a.like1 > span:hover {
+    color: rgb(184, 34, 34);
+}
+
+.landlord > .postcontent > div > div:nth-of-type(2) > a.collect1 > span:hover {
+    color: rgb(253, 191, 19);
+}
+
+.landlord > .postcontent > div > div:nth-of-type(2) > a.reply1 > span:hover {
+    color: rgb(141, 141, 141);
+}
+
+.landlord > .postcontent > div > div:nth-of-type(2) > a.jubao1 > span:hover {
+    color: rgb(252, 248, 30);
+}
+
+.landlord > .postcontent > div > div:nth-of-type(2) > a.del > span:hover {
+    color: rgb(90, 90, 90);
+}
+
+a.like2 > span {
+    color: rgb(184, 34, 34);
+}
+
+a.collect2 > span {
+    color: rgb(253, 191, 19);
+}
+
+a.reply2 > span {
+    color: rgb(141, 141, 141);
+}
+
+a.jubao2 > span {
+    color: rgb(252, 248, 30);
+}
+
+/* 回复信息 */
+.reply {
+    background-color: rgba(50, 50, 50, .4);
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    color: white;
+    margin-top: 20px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* 回复人昵称 */
+.reply > .title {
+    height: 25%;
+    font: bolder 28px two;
+    color: rgb(201, 201, 201);
+    padding: 8px;
+    box-sizing: border-box;
+    border-bottom: solid 1px gray;
+}
+
+.reply > .reply_content {
+    width: 90%;
+    margin: 8px auto;
+    padding: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px rgb(220, 220, 220);
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(53, 53, 53, 0.5);
+}
+
+/* 回复人头像 */
+.reply > .reply_content > .head_img {
+    width: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.reply > .reply_content > .head_img a {
+    display: inline-block;
+    width: 80%;
+}
+
+.reply > .reply_content > .head_img a img {
+    width: 100%;
+    border-radius: 50%;
+    border: rgb(202, 202, 202) solid 2px;
+    box-sizing: border-box;
+}
+
+.reply > .reply_content > .body {
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+/* 回复的名字 */
+.reply > .reply_content > .body .title {
+    font: bold 25px two;
+    color: rgb(105, 105, 105);
+    padding: 5px;
+    box-sizing: border-box;
+    border-bottom: solid 1px rgb(105, 105, 105);
+}
+
+/* 回复的内容 */
+.reply > .reply_content > .body .content {
+    text-indent: 2em;
+    color: rgb(167, 167, 167);
+    margin: 10px 0;
+}
+
+/* 回复的时间等 */
+.reply > .reply_content > .body .date_name {
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(105, 105, 105);
+}
+
+.reply > .reply_content > .body .date_name > div span {
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.reply > .reply_content > .body .date_name > div span:nth-of-type(1):hover {
+    color: rgb(184, 34, 34);
+}
+
+.reply > .reply_content > .body .date_name > div span.colRed {
+    color: rgb(184, 34, 34);
+}
+
+.reply > .reply_content > .body .date_name > div span:nth-of-type(2):hover {
+    color: rgb(141, 141, 141);
+}
+
+/* 回复框样式 */
+.startreply {
+    width: 70%;
+    height: 170px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px rgb(220, 220, 220);
+    position: fixed;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(41, 41, 41);
+    box-shadow: 0 0 5px rgb(201, 201, 201);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    opacity: .95;
+}
+
+/* 回复框的关闭按钮样式 */
+.startreply .close {
+    width: 16px;
+    height: 16px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(180, 180, 180);
+    transition: all 0.2s linear;
+}
+
+.startreply .close:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+/* 回复框的标题 */
+.startreply .title {
+    font: bold 23px two;
+    color: rgb(210, 210, 210);
+}
+
+/* 回复框的内容 */
+.startreply textarea {
+    width: 100%;
+    height: 40%;
+    background-color: transparent;
+    box-shadow: 0 0 2px rgb(201, 201, 201);
+    outline: none;
+    resize: none;
+    color: rgb(180, 180, 180);
+    padding: 1px;
+    box-sizing: border-box;
+    text-indent: 1em;
+    font-size: 18px;
+}
+
+/* 回复框的提交按钮 */
+.startreply > button {
+    width: 45px;
+    height: 23px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px rgb(218, 218, 218);
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 14px;
+    color: rgb(173, 173, 173);
+}
+
+.startreply > button:active {
+    background-color: rgb(173, 173, 173);
+    color: rgb(50, 50, 50);
+}
+
+.startreply > button:hover {
+    border: solid .5px rgb(201,201,201);
+}

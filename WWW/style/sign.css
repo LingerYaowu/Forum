@@ -1,0 +1,140 @@
+/* 清除全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置背景 */
+body {
+    width: 100vw;
+    height: 100vh;
+    /* background: url(../images/sign/formBg.png) no-repeat center/cover; */
+    background-color: rgb(24, 24, 24);
+    /* 使内容居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 设置存放表单盒子的样式 */
+.forms {
+    width: 600px;
+    height: 410px;
+    background-color: rgb(43, 43, 43);
+    color: rgba(228,228,228,.9);
+    padding: 10px;
+    box-shadow: 0 0 7px rgb(180, 180, 180);
+    opacity: 0.75;
+    border-radius: 6px;
+}
+
+.forms form {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.forms input {
+    border-color: rgba(228,228,228,.9);
+    color: rgba(228,228,228,.9);
+}
+
+/* 控件 */
+.cons {
+    width: 100%;
+    height: 62%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 标题 */
+.title {
+    font: bold 40px two;
+}
+
+/* 注册 发送/接收验证码框样式 */
+.signCode , .logonCode {
+    position: relative;
+}
+
+.signCode > .sendCode {
+    height: 100%;
+    width: 75px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    border-left: solid 1px rgba(228,228,228,.9);
+    outline: none;
+    background-color: rgba(228,228,228,.2);
+    color: rgba(228,228,228,.9);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 登录 验证码框样式 */
+.LogonCode {
+    position: relative;
+}
+
+.logonCode  div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    border-left: solid 1px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.logonCode  div img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* 提交按钮、跳转按钮布局 */
+.btns {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links {
+    width: 100%;
+    text-align: right;
+}
+
+input[type=submit] {
+    padding: 5px 130px;
+    font-size: 24px;
+}
+
+/* 设置加载页面的样式 */
+.load {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,0,0,.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 温馨提示 */
+.reminder {
+    font-size: 14px;
+}

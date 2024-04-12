@@ -1,0 +1,843 @@
+﻿/* 清除全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 设置背景 */
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(20, 20, 20);
+    padding-top: 68px;
+    box-sizing: border-box;
+}
+
+/* 最外层的盒子 */
+.big {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* 搜索框与热门搜索的外层元素 */
+.searchAndHot {
+    background-color: rgb(87, 87, 87);
+    display: flex;
+    justify-content: flex-end;
+    padding: 3px 0;
+}
+
+.search:hover {
+    box-shadow: 0 0 1px rgb(255, 255, 255);
+}
+
+/* 搜索框 */
+.searchAndHot .search {
+    width: 350px;
+    height: 30px;
+    border: solid 1px rgb(202, 202, 202);
+    box-sizing: border-box;
+    margin-right: 15px;
+}
+
+.search > form {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.search > form button {
+    width: 21%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-left: solid 1px rgb(202, 202, 202);
+    box-sizing: border-box;
+    font-size: 17px;
+    color: rgb(202, 202, 202);
+}
+
+.search > form button:hover {
+    background-color: rgb(240, 240, 240);
+    color: rgb(107, 107, 107);
+    cursor: pointer;
+}
+
+.search > form input {
+    width: 79%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    text-indent: 2px;
+    color: rgb(238, 238, 238);
+}
+
+.search > form input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: url("../images/backspace.png") no-repeat center;
+    background-size: 100% 80%;
+    color:rgba(0,0,0,0);
+}
+
+/* 热搜 */
+.searchAndHot .hot {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.searchAndHot .hot span {
+    font-size: 14px;
+    margin: 0 9px;
+    color: rgb(196, 196, 196);
+    cursor: pointer;
+}
+.searchAndHot .hot span:hover {
+    text-decoration: underline;
+}
+
+.searchAndHot .hot p {
+    color: rgb(236, 236, 236);
+}
+
+.searchAndHot .hot > div span.one a {
+    color: rgb(228, 202, 117);
+}
+
+.searchAndHot .hot > div span a {
+    color: rgb(172, 172, 172);
+}
+
+/* 每个展示帖子的样式 */
+.posts {
+    width: 90%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgb(247, 247, 247); */
+    padding: 3px;
+    box-sizing: border-box;
+    transition: all .2s linear;
+    margin: 9px auto;
+    animation: an .3s linear forwards;
+    border-bottom: solid 1px rgb(151, 151, 151);
+}
+
+@keyframes an {
+    0% {
+        transform: rotateX(-80deg) skewX(10deg);
+    }
+    100% {
+        transform: rotateX(0deg) skewX(0deg);
+    }
+}
+
+.posts:hover {
+    background-color: rgb(59, 59, 59);
+    box-shadow: 0 0 3px rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.posts > .post_headimg {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.posts > .post_headimg img {
+    border-radius: 50%;
+    width: 70%;
+    height: 70%;
+    border: solid 1.5px rgb(68, 68, 68);
+    box-sizing: border-box;
+}
+
+.posts:hover > .post_headimg img {
+    border: solid 1px rgb(210, 210, 210);
+}
+
+.posts > .cont {
+    width: 87%;
+    height: 90%;
+    padding: 5px 0;
+    box-sizing: border-box;
+    border-bottom: solid 1px rgb(112, 112, 112);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.posts > .cont .title {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(146, 146, 146);
+}
+
+.posts > .cont .title:hover {
+    transition: all .1s linear;
+    color: rgb(240, 240, 240);
+}
+
+.posts > .cont > div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.posts > .cont > div:nth-of-type(2) .data_name span {
+    font-size: 15px;
+    margin: 0 4px;
+    color: rgb(130, 130, 130);
+}
+
+.posts > .cont > div:nth-of-type(2) > div:nth-of-type(2) span{
+    display: inline-block;
+    color: rgb(130, 130, 130);
+}
+
+/* 展示帖子 */
+.postsContent {
+    width: 40%;
+    height: 80%;
+    box-shadow: 0 0px 3px rgb(221, 221, 221);
+    transition: all 2s linear;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(40, 40, 40, .4);
+}
+
+/* 排序盒子 */
+.postsContent > .sort {
+    height: 11%;
+    border-bottom: solid 1px gray;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(32, 32, 32);
+    align-items: center;
+}
+
+.postsContent > .sort p {
+    font: bold 25px two;
+    color: rgb(170, 170, 170);
+}
+
+.postsContent > .sort > select {
+    width: 110px;
+    height: 35px;
+    color: gray;
+    border-color: gray;
+    outline: none;
+    background-color: transparent;
+    box-shadow: 0 0 2px rgb(202, 202, 202);
+}
+
+.postsContent > .sort > select > option {
+    width: 110px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+/* 装帖子的盒子 */
+.postsContent > .posts_cont {
+    height: 89%;
+    overflow: hidden;
+    padding: 3px;
+    box-sizing: border-box;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.postsContent > .posts_cont:hover {
+    overflow: auto;
+}
+
+.postsContent > .posts_cont::-webkit-scrollbar {
+    width: 0;
+}
+
+/* 功能按钮集 */
+.funBtns {
+    width: 100%;
+    height: 45px;
+    overflow: hidden;
+    box-shadow: 0 0 3px rgb(210, 210, 210);
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5px;
+    box-sizing: border-box;
+}
+
+.funBtns > div {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(40, 40, 40);
+    border: solid 0.5px rgb(151, 151, 151);
+    box-sizing: border-box;
+}
+
+.funBtns > div:hover {
+    transition: all .2s linear;
+    background-color: rgb(209, 209, 209);
+}
+
+.funBtns > div:hover a {
+    transition: all .2s linear;
+    color: rgb(40, 40, 40);
+}
+
+.funBtns > div a {
+    width: 100%;
+    height: 100%;
+    color: rgb(209, 209, 209);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+}
+
+/* 发布帖子板块的样式 */
+.publishform {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 36, 36, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.publishform form {
+    width: 510px;
+    box-shadow: 0 0 3px rgb(224, 224, 224);
+    border-radius: 5px;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(31,31,31);
+    color: rgb(182, 182, 182);
+    -webkit-animation: scale .2s;
+    animation: scale .2s
+}
+
+@-webkit-keyframes scale {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes scale {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.publishform form input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: rgb(196, 196, 196);
+    text-indent: 4px;
+}
+
+.publishform form textarea {
+    outline: none;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 19px;
+    color: rgb(196, 196, 196);
+    text-indent: 7px;
+}
+
+.publishform form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 5px 0;
+}
+
+.publishform form div label {
+    display: inline-block;
+    width: 15%;
+    font-size: 21px;
+}
+
+.publishform form div div {
+    width: 80%;
+    height: 40px;
+    box-shadow: 0 0 2px rgb(201, 201, 201);
+}
+
+.publishform form div textarea {
+    width: 80%;
+    height: 150px;
+    box-shadow: 0 0 2px rgb(201, 201, 201);
+}
+
+.publishform form div button {
+    width: 80px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    box-shadow: 0 0 1.5px rgb(221, 221, 221);
+    font-size: 16px;
+    color: rgb(172, 172, 172);
+}
+
+.publishform form div button:hover {
+    background-color: rgb(172, 172, 172);
+    color: rgb(40,40,40);
+    box-shadow: 0 0 1.5px rgb(17, 17, 17);
+    cursor: pointer;
+}
+
+.publishform form p , .relrec .relcon > p.tit {
+    font-size: 25px;
+    text-align: center;
+}
+
+.publishform form p span , .relrec .relcon > p.tit span {
+    font-size: 25px;
+}
+
+.publishform form .close , .relrec > .relcon > .close span {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    align-self: flex-end;
+    transition: all .2s linear;
+}
+
+.publishform form .close:hover , .relrec > .relcon > .close span:hover {
+    transform: rotate(180deg);
+}
+
+/* 没人发布帖子 */
+.no {
+    font: bold 25px one;
+    color: rgb(153, 153, 153);
+}
+
+/* 游戏榜单 */
+.game_list {
+    width: 30%;
+    height: 80%;
+    box-shadow: 0 0px 3px rgb(221, 221, 221);
+    background-color: rgba(40, 40, 40, .4);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.game_type {
+    width: 100%;
+    height: 11%;
+    box-shadow: 0 0 2px rgb(182, 182, 182);
+    position: relative;
+    border-bottom: solid 1px rgb(128, 128, 128);
+    box-sizing: border-box;
+}
+
+.game_type > div:not(.replaceBtn) {
+    width: 100%;
+    height: 100%;
+    font: bold 33px one;
+    color: rgb(196, 196, 196);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.game_type > div.replaceBtn {
+    width: 6%;
+    height: 100%;
+    box-shadow: 0 0 2px rgb(153, 153, 153);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(143, 143, 143);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game_type > div.replaceBtn:hover {
+    cursor: pointer;
+    color: rgb(182, 182, 182);
+    box-shadow: 0 0 3px rgb(210, 210, 210);
+}
+
+.game_type > div.replaceBtn span {
+    font-size: 25px;
+}
+
+.game_type > div.replaceBtn:nth-of-type(1) {
+    left: 0;
+}
+
+.game_type > div.replaceBtn:nth-of-type(2) {
+    right: 0;
+}
+
+.game_type > div.select {
+    display: flex;
+    background-color: rgb(32, 32, 32);
+}
+
+.list_content {
+    width: 100%;
+    height: 89%;
+    background-color: rgba(41, 41, 41, .3);
+}
+
+.list_content > div {
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding-top: 50px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: auto;
+}
+
+.list_content > div::-webkit-scrollbar {
+    width: 0;
+}
+
+.list_content > div > div.tit {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(37, 37, 37);
+    color: rgb(182, 182, 182);
+    font: bold 25px one;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list_content > div.select {
+    display: block;
+}
+
+.list_content > div > div.lis {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list_content > div > div.lis > * {
+    width: 20%;
+    height: 50px;
+    box-shadow: 0 0 1px rgba(182, 182, 182, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: rgb(172, 172, 172);
+} 
+
+.list_content > div > div.lis > p:nth-of-type(4) {
+    width: 35%;
+}
+
+.list_content > div > div.lis > p:nth-of-type(1) {
+    width: 5%;
+}
+
+.list_content > div > div.lis > p:nth-of-type(2) {
+    width: 30%;
+}
+
+.list_content > div > div.lis > p > a {
+    color: rgb(170, 170, 170);
+}
+
+.list_content > div > div.lis > p > a:hover {
+    color: rgb(201, 201, 201);
+    text-decoration: underline;
+}
+
+.list_content > div > div.lis > div {
+    width: 10%;
+}
+
+.list_content > div > div.lis > div img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgb(207, 207, 207);
+}
+
+/* 资源共享 */
+.shareResource {
+    width: 30%;
+    height: 80%;
+    box-shadow: 0 0px 3px rgb(221, 221, 221);
+    background-color: rgba(40, 40, 40, .4);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shareResource > .tit {
+    width: 100%;
+    height: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: bold 33px one;
+    color: rgb(196, 196, 196);
+    background-color: rgb(32, 32, 32);
+    border-bottom: solid 1px rgb(128, 128, 128);
+}
+
+.shareResource > .resCon {
+    width: 100%;
+    height: 89%;
+    background-color: rgb(28, 28, 28);
+}
+
+.shareResource > .resCon > .resNav {
+    width: 100%;
+    height: 5%;
+}
+
+.shareResource > .resCon > .resNav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid rgb(118, 118, 118) 1px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+.shareResource > .resCon > .resNav ul li {
+    width: 24.5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: bold 19px two;
+    background-color: rgb(39, 39, 39);
+    color: rgb(180, 180, 180);
+}
+
+/* 选中的资源类型 */
+.shareResource > .resCon > .resNav ul li.select {
+    background-color: rgb(75, 75, 75);
+    color: rgb(197, 197, 197);
+}
+
+.shareResource > .resCon > .resNav ul li:hover {
+    cursor: pointer;
+    background-color: rgb(75, 75, 75);
+    color: rgb(197, 197, 197);
+}
+
+/* 资源显示的地方 */
+.shareResource > .resCon > .resources {
+    width: 100%;
+    height: 95%;
+    overflow: hidden;
+    display: flex;
+}
+
+.shareResource > .resCon > .resources > div {
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.shareResource > .resCon > .resources > div > ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px;
+    box-sizing: border-box;
+}
+
+.shareResource > .resCon > .resources > div > ul li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(146, 146, 146);
+}
+
+.shareResource > .resCon > .resources > div > ul li a {
+    color: rgb(146, 146, 146);
+}
+
+.shareResource > .resCon > .resources > div > ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 选中的资源板块 */
+.shareResource > .resCon > .resources > div.select {
+    display: block;
+}
+
+/* 发布资源板块 */
+.relrec {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(40, 40, 40, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.relrec > .relcon {
+    width: 560px;
+    height: 380px;
+    background-color: rgb(31, 31, 31);
+    box-shadow: 0 0 3px rgb(146, 146, 146);
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: rgb(170, 170, 170);
+    -webkit-animation: scale .2s;
+    animation: scale .2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.relrec > .relcon > .close {
+    height: 5%;
+    position: relative;
+}
+
+.relrec > .relcon > .close span {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.relrec > .relcon > p.tit {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 要分享资源的表单 */
+.relrec > .relcon form {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 19px;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.relrec > .relcon form div {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+
+.relrec > .relcon form input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+.relrec > .relcon form > div:nth-of-type(1) input {
+    width: 65%;
+    height: 35px;
+    border-bottom: solid 1px rgb(126, 126, 126);
+    color: rgb(182, 182, 182);
+    text-indent: 2px;
+    font-size: 19px;
+}
+
+.relrec > .relcon form > div:nth-of-type(2) > div label {
+    margin: 0 6px;
+    cursor: pointer;
+}
+
+.relrec > .relcon form > div:nth-of-type(4) {
+    position: relative;
+}
+
+.relrec > .relcon form > div:nth-of-type(4) input {
+    width: 65px;
+    height: 30px;
+    border: solid 1px rgb(130, 130, 130);
+    box-sizing: border-box;
+    color: rgb(130, 130, 130);
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+}
+
+/* banner背景 */
+.ban {
+    width: 100%;
+    height: 15%;
+    background-color: aqua;
+    background: url(../images/banner.png) no-repeat bottom center/cover;
+}
+
+.ban > div {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+}

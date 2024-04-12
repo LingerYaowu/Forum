@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(30, 30, 30);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 标题 */
+.title {
+    color: rgb(175, 175, 175);
+    text-align: center;
+    font-size: 23px;
+}
+
+/* 棋盘 */
+.chess {
+    box-shadow: 0 0 3px rgb(112, 112, 112);
+    margin: 30px 0;
+    cursor: pointer;
+}
+
+/* 功能按钮 */
+.funbtns {
+    text-align: center;
+}
+
+.restart {
+    padding: 10px 20px;
+    box-shadow: 0 0 2px rgb(112, 112, 112);
+    text-decoration: none;
+    color: rgb(175, 175, 175);
+}

@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(15, 15, 15);
+}
+
+.big {
+    width: 100%;
+    height: 100%;
+    padding-top: 70px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 设置顶部导航条 */
+.top_nav {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(20, 20, 20);
+    border-bottom: solid 1px rgb(180, 180, 180);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.top_nav > p {
+    font: bold 30px one;
+    color: rgb(190, 190, 190);
+}
+
+.top_nav > p.title {
+    font: bold 40px one;
+}
+
+.top_nav > p.title > a {
+    color: rgb(192, 192, 192);
+    text-decoration: none;
+}
+
+/* 地图 */
+.map {
+    width: 600px;
+    height: 600px;
+    box-shadow: 0 0 3px rgb(180, 180, 180);
+    margin: 10px auto;
+    position: relative;
+    background-color: rgb(30, 30, 30);
+}
+
+/* 蛇 */
+.snake {
+    box-shadow: 0 0 5px inset rgb(200, 200, 200);
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* 食物 */
+.map > div.food {
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 15px inset rgb(200, 200, 200);
+    position: absolute;
+}
+
+/* 开始 */
+.start {
+    width: 400px;
+    height: 200px;
+    box-shadow: 0 0 3px rgb(200, 200, 200);
+    color: rgb(180, 180, 180);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(30, 30, 30);
+}
+
+.start > p {
+    display: flex;
+    justify-content: center;
+}
+
+.start > p:nth-of-type(1) {
+    height: 65%;
+    font: bold 35px one;
+    align-items: center;
+    animation: fontSize .7s linear infinite alternate;
+}
+
+@keyframes fontSize {
+    from {font: bold 35px one;}
+    to {font: bold 55px one;}
+}
+
+.start > p:nth-of-type(2) {
+    height: 35%;
+    font: italic 29px one;
+}
+
+.start > p:nth-of-type(2):hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* 历史战绩 */
+.record {
+    width: 28%;
+    height: calc(100% - 70px);
+    box-shadow: 0 0 2px rgb(190, 190, 190);
+    color: rgb(180, 180, 180);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.record p.title {
+    height: 6%;
+    box-shadow: 0 0 2px rgb(180, 180, 180);
+    font: bold 32px one;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.record > div.record_content {
+    width: 100%;
+    height: 85%;
+    overflow: auto;
+    box-shadow: 0 0 3px rgb(190, 190, 190);
+}
+
+.record > div.record_content::-webkit-scrollbar {
+    width: 0;
+}
+
+.record > div.score_top , .record > div.record_content > div {
+    height: 6%;
+    overflow: hidden;
+    box-shadow: 0 0 2px rgb(243, 213, 40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+    color: rgb(212, 187, 41);
+}
+
+.record > div.record_content > div {
+    box-shadow: 0 0 2px rgb(200, 200, 200)!important;
+    color: rgb(189, 189, 189);
+}
+
+.record > div.score_top > div , .record > div.record_content > div > div  {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.record > div.score_top > div > img , .record > div.record_content > div > div > img {
+    height: 80%;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgb(250, 213, 7);
+}
+
+.record > div.record_content > div > div > img {
+    box-shadow: 0 0 3px rgb(192, 192, 192);
+}

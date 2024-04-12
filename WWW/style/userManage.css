@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(30, 30, 30);
+    color: rgb(180, 180, 180);
+}
+
+.big {
+    width: 100%;
+    height: 100%;
+    padding-top: 65px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.users {
+    width: 75%;
+    height: 70%;
+    overflow: auto;
+    box-shadow: 0 0 5px rgb(180, 180, 180);
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(73, 73, 73, 0.1);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.users .title {
+    width: 100%;
+    height: 6%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.users .title > p {
+    flex-shrink: 0;
+    width: 10%;
+    height: 30px;
+    font: bold 21px one;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 2px rgb(180, 180, 180);
+    background-color: rgba(177, 177, 177, 0.1);
+}
+
+.users .content {
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+    background-color: rgba(177, 177, 177, 0.1);
+    box-shadow: 0 0 2px rgb(180, 180, 180);
+}
+
+.users > .content::-webkit-scrollbar {
+    width: 0;
+}
+
+.users .content > div {
+    height: 85px;
+    display: flex;
+    box-shadow: 0 0 2px rgb(180, 180, 180);
+    margin: 3px 0;
+}
+
+.users .content > div:hover {
+    background-color: rgba(177, 177, 177, 0.1);
+}
+
+.users .content > div > p {
+    width: 11.5%;
+    overflow: hidden;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    word-wrap: break-word;
+    box-shadow: 0 0 1px rgb(180, 180, 180);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.users .content > div > p img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: solid 2px rgb(180, 180, 180);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.users .content > div > p input {
+    width: 30%;
+    height: 30%;
+}

@@ -1,0 +1,263 @@
+/* 设置导航条 */
+.top_nav {
+    width: 100%;
+    height: 65px;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 1px 2px rgb(240,240,240);
+    position: fixed;
+    top: 0;
+}
+
+/* 导航条中的 [logo] */
+.top_nav .logo a {
+    color: rgb(245,245,245);
+    font-size: 35px;
+}
+
+/* 导航条中的 [友情链接] */
+.top_nav ul {
+    display: flex;
+}
+
+.top_nav ul li {
+    margin: 0 10px;
+}
+
+.top_nav ul a,.top_nav .user a {
+    font-size: 15px;
+    color: rgb(240,240,240);
+}
+
+.top_nav ul a:hover {
+    text-decoration: underline;
+}
+
+/* 导航条中的 [展示用户] */
+.top_nav .user {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.top_nav .user > div {
+    color: rgb(245,245,245);
+    margin: 0 10px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 包裹头像的盒子 */
+.headimg {
+    height: 55px;
+    width: 55px;
+    background-color: rgb(200, 200, 200);
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    border: solid 1px rgb(210, 210, 210);
+    box-sizing: border-box;
+}
+
+.headimg .vip {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(35%,10%);
+    font-size: 25px;
+    color: rgb(244,208,14);
+}
+
+.headimg > img {
+    transition: all .2s linear;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.headimg .vipimg {
+    border: solid 1px rgb(244,208,14);
+    box-sizing: border-box;
+}
+
+/* 鼠标经过时头像转动 */
+.user>div:nth-of-type(1):hover .headimg img {
+    transform: rotate(360deg);
+}
+
+.user > div:nth-of-type(2) {
+    margin-left: 15px;
+}
+
+.user > div:nth-of-type(1) > p {
+    transition: all .3s linear;
+}
+
+/* 鼠标经过时字头改变效果 */
+.user > div:nth-of-type(1):hover > p {
+    color: rgb(67, 140, 236);
+    text-decoration: underline;
+}
+
+.user > div:nth-of-type(2) a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: rgb(240, 240, 240);
+    font-size: 19px;
+    text-decoration: none;
+}
+
+/* 鼠标经过时字体改变样式 */
+.user > div:nth-of-type(2) a:hover {
+    color: rgb(210, 210, 210);
+}
+
+.user > div:nth-of-type(2) a img {
+    height: 25%;
+}
+
+/* 个人信息面板(information) */
+.information {
+    width: 550px;
+    height: 350px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: rgb(32, 32, 32);
+    box-shadow: 0 0 5px rgb(180, 180, 180);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    -webkit-animation: scale .2s;
+    animation: scale .2s
+}
+
+@-webkit-keyframes scale {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes scale {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.informationBg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 关闭个人信息面板按钮 */
+.information .close {
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 33px;
+    cursor: pointer;
+    color: rgb(167, 167, 167);
+    transition: all .2s linear;
+    align-self: flex-end;
+}
+
+
+/* 鼠标经过关闭按钮时旋转 */
+.information .close:hover {
+    transform: rotateZ(180deg);
+}
+
+/* 个人信息内容 */
+.information .content {
+    width: 100%;
+    height: 80%;
+}
+
+/* 修改个人信息链接 */
+.information .update {
+    text-align: right;
+}
+
+.information .update a {
+    color: rgb(139, 139, 139);
+    font-size: 18px;
+}
+
+.information .update a:hover {
+    color: rgb(180, 180, 180);
+}
+
+/* 个人信息内容部分 */
+.information .content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* 个人信息展示-头像 */
+.information > .content > div {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.information .headimg {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* 个人信息展示-详细 */
+.information .content > ul {
+    width: 55%;
+    height: 100%;
+    box-shadow: 0 0 5px rgb(180, 180, 180);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.information .content > ul > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.information .content > ul > li > a {
+    display: inline-block;
+    width: 70%;
+}
+
+.information .content > ul > li > label {
+    color: rgb(180, 180, 180);
+}
+
+.information .content > ul > li > input,.information .content > ul > li > a > input {
+    width: 70%;
+    height: 45px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: rgb(150, 150, 150);
+}

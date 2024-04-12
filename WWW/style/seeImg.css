@@ -1,0 +1,49 @@
+.seeImg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.seeImg p {
+    color: rgb(180, 180, 180);
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    text-align: right;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.seeImg p span {
+    display: inline-block;
+    font-size: 40px;
+    transition: all .2s linear;
+    cursor: pointer;
+}
+
+.seeImg p span:hover {
+    transform: rotate(90deg);
+}
+
+.seeImg > img {
+    width: 50%;
+    animation: scale .1s linear;
+}
+
+@-webkit-keyframes scale {
+    from {transform:scale(0);}
+    to {transform:scale(1);}
+}
+
+@-keyframes scale {
+    from {transform:scale(0);}
+    to {transform:scale(1);}
+}
